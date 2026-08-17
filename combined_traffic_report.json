@@ -1,0 +1,40 @@
+{
+    "summary": "Consolidated Batch Traffic Report for All Videos (YOLOv11)",
+    "total_videos_processed": 2,
+    "total_unique_vehicles_across_all_videos": 287,
+    "total_vehicles_crossed_line": 31,
+    "video_reports": [
+        {
+            "video_file": "WhatsApp Video 2026-08-17 at 8.56.16 PM.mp4",
+            "total_frames_processed": 283,
+            "processing_time_sec": 128.39,
+            "total_unique_vehicles_tracked": 131,
+            "vehicles_crossed_line": 24,
+            "average_vehicles_per_frame": 34.16,
+            "peak_vehicles_in_single_frame": 42,
+            "breakdown_by_category": {
+                "Cars": 44,
+                "Motorcycles_and_Scooters": 48,
+                "Buses": 21,
+                "Trucks": 18,
+                "Bicycles": 0
+            }
+        },
+        {
+            "video_file": "Video Project.mp4",
+            "total_frames_processed": 366,
+            "processing_time_sec": 169.16,
+            "total_unique_vehicles_tracked": 156,
+            "vehicles_crossed_line": 7,
+            "average_vehicles_per_frame": 20.27,
+            "peak_vehicles_in_single_frame": 27,
+            "breakdown_by_category": {
+                "Cars": 68,
+                "Motorcycles_and_Scooters": 20,
+                "Buses": 11,
+                "Trucks": 57,
+                "Bicycles": 0
+            }
+        }
+    ]
+}

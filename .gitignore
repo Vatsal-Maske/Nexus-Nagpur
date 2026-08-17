@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Production build outputs
+dist/
+dist-ssr/
+*.local
+
+# Environment & Secret files
+.env
+.env.local
+.env.*.local
+
+# Python / FastAPI backend temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+
+# Large Machine Learning Weights & Models
+yolo11m.pt
+*.pt
+*.onnx
+*.engine
+
+# IDE & OS Metadata
+.trae/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

@@ -53,3 +53,9 @@ public/sample_data/*.avi
 sample_data/*.mp4
 sample_data/*.MOV
 sample_data/*.avi
+
+# Allow H.264 converted CCTV feeds (under 100MB, browser-compatible)
+!public/sample_data/cam01_h264.mp4
+!public/sample_data/cam02_h264.mp4
+!public/sample_data/cam03_h264.mp4
+!public/sample_data/cam04_h264.mp4

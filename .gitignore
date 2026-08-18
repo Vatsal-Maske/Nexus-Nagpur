@@ -38,3 +38,18 @@ yolo11m.pt
 .DS_Store
 Thumbs.db
 *.log
+
+# Large video & media files (too large for GitHub)
+*.mp4
+*.MOV
+*.mov
+*.avi
+*.mkv
+*.webm
+public/output_videos/
+public/sample_data/*.mp4
+public/sample_data/*.MOV
+public/sample_data/*.avi
+sample_data/*.mp4
+sample_data/*.MOV
+sample_data/*.avi

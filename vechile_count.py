@@ -14,7 +14,7 @@ from ultralytics import YOLO
 def process_vehicle_counting(
     video_path="Video Project.mp4",
     output_path="vehicle_project_output.mp4",
-    model_name="yolo11m.pt",
+    model_name="yolov8n.pt",
     conf_threshold=0.15,
     counting_line_ratio=0.65, # Horizontal line position (fraction of frame height)
 ):
@@ -215,20 +215,20 @@ def process_vehicle_counting(
 if __name__ == "__main__":
     videos_to_process = [
         {
-            "video": "sample_data/1st.mp4",
-            "output": "sample_data/1st_output.mp4"
+            "video": "sample_data/Vid-1.MOV" if os.path.exists("sample_data/Vid-1.MOV") else "sample_data/1st.mp4",
+            "output": "sample_data/Vid-1_output.mp4"
         },
         {
-            "video": "sample_data/2nd.mp4",
-            "output": "sample_data/2nd_output.mp4"
+            "video": "sample_data/Vid-2.MOV" if os.path.exists("sample_data/Vid-2.MOV") else "sample_data/2nd.mp4",
+            "output": "sample_data/Vid-2_output.mp4"
         },
         {
-            "video": "sample_data/3rd.mp4",
-            "output": "sample_data/3rd_output.mp4"
+            "video": "sample_data/Vid-3.MOV" if os.path.exists("sample_data/Vid-3.MOV") else "sample_data/3rd.mp4",
+            "output": "sample_data/Vid-3_output.mp4"
         },
         {
-            "video": "sample_data/4th.mp4",
-            "output": "sample_data/4th_output.mp4"
+            "video": "sample_data/Vid-4.MOV" if os.path.exists("sample_data/Vid-4.MOV") else "sample_data/4th.mp4",
+            "output": "sample_data/Vid-4_output.mp4"
         }
     ]
     

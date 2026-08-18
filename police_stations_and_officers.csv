@@ -1,0 +1,41 @@
+Station Name,Latitude,Longitude,Officer Name,Officer Email,Availability
+Station 1,21.1458,79.0882,Officer 1-01,officer1_01@police.example.com,Available
+Station 1,21.1458,79.0882,Officer 1-02,officer1_02@police.example.com,Available
+Station 1,21.1458,79.0882,Officer 1-03,officer1_03@police.example.com,On Duty
+Station 1,21.1458,79.0882,Officer 1-04,officer1_04@police.example.com,Available
+Station 1,21.1458,79.0882,Officer 1-05,officer1_05@police.example.com,Unavailable
+Station 1,21.1458,79.0882,Officer 1-06,officer1_06@police.example.com,Available
+Station 1,21.1458,79.0882,Officer 1-07,officer1_07@police.example.com,On Duty
+Station 1,21.1458,79.0882,Officer 1-08,officer1_08@police.example.com,Available
+Station 1,21.1458,79.0882,Officer 1-09,officer1_09@police.example.com,Available
+Station 1,21.1458,79.0882,Officer 1-10,officer1_10@police.example.com,Unavailable
+Station 2,21.1497,79.0806,Officer 2-01,officer2_01@police.example.com,Available
+Station 2,21.1497,79.0806,Officer 2-02,officer2_02@police.example.com,Available
+Station 2,21.1497,79.0806,Officer 2-03,officer2_03@police.example.com,On Duty
+Station 2,21.1497,79.0806,Officer 2-04,officer2_04@police.example.com,Available
+Station 2,21.1497,79.0806,Officer 2-05,officer2_05@police.example.com,Unavailable
+Station 2,21.1497,79.0806,Officer 2-06,officer2_06@police.example.com,Available
+Station 2,21.1497,79.0806,Officer 2-07,officer2_07@police.example.com,On Duty
+Station 2,21.1497,79.0806,Officer 2-08,officer2_08@police.example.com,Available
+Station 2,21.1497,79.0806,Officer 2-09,officer2_09@police.example.com,Available
+Station 2,21.1497,79.0806,Officer 2-10,officer2_10@police.example.com,Unavailable
+Station 3,21.1367,79.0924,Officer 3-01,officer3_01@police.example.com,Available
+Station 3,21.1367,79.0924,Officer 3-02,officer3_02@police.example.com,Available
+Station 3,21.1367,79.0924,Officer 3-03,officer3_03@police.example.com,On Duty
+Station 3,21.1367,79.0924,Officer 3-04,officer3_04@police.example.com,Available
+Station 3,21.1367,79.0924,Officer 3-05,officer3_05@police.example.com,Unavailable
+Station 3,21.1367,79.0924,Officer 3-06,officer3_06@police.example.com,Available
+Station 3,21.1367,79.0924,Officer 3-07,officer3_07@police.example.com,On Duty
+Station 3,21.1367,79.0924,Officer 3-08,officer3_08@police.example.com,Available
+Station 3,21.1367,79.0924,Officer 3-09,officer3_09@police.example.com,Available
+Station 3,21.1367,79.0924,Officer 3-10,officer3_10@police.example.com,Unavailable
+Station 4,21.1571,79.1013,Officer 4-01,officer4_01@police.example.com,Available
+Station 4,21.1571,79.1013,Officer 4-02,officer4_02@police.example.com,Available
+Station 4,21.1571,79.1013,Officer 4-03,officer4_03@police.example.com,On Duty
+Station 4,21.1571,79.1013,Officer 4-04,officer4_04@police.example.com,Available
+Station 4,21.1571,79.1013,Officer 4-05,officer4_05@police.example.com,Unavailable
+Station 4,21.1571,79.1013,Officer 4-06,officer4_06@police.example.com,Available
+Station 4,21.1571,79.1013,Officer 4-07,officer4_07@police.example.com,On Duty
+Station 4,21.1571,79.1013,Officer 4-08,officer4_08@police.example.com,Available
+Station 4,21.1571,79.1013,Officer 4-09,officer4_09@police.example.com,Available
+Station 4,21.1571,79.1013,Officer 4-10,officer4_10@police.example.com,Unavailable

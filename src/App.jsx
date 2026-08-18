@@ -1,13 +1,42 @@
-import React from 'react';
-import { Shield, Map, Camera, ShieldAlert, Users, Sliders, BookOpen, Radio, AlertTriangle, Bell } from 'lucide-react';
+import React, { useState, useCallback } from 'react';
+import { Shield, Map, Camera, ShieldAlert, Users, Sliders, Radio } from 'lucide-react';
 import ControlMap from './components/ControlMap';
 import CameraFeeds from './components/CameraFeeds';
 import RiskMatrix from './components/RiskMatrix';
 import ShiftManager from './components/ShiftManager';
 import IncidentSimulator from './components/IncidentSimulator';
-import ReportViewer from './components/ReportViewer';
 
 export default function App() {
+  const [cctvRegionsData, setCctvRegionsData] = useState(null);
+  const [activeIncident, setActiveIncident] = useState(null);
+  const [dispatchedOfficers, setDispatchedOfficers] = useState({}); // junction_id -> officer_info
+
+  const handleCctvUpdate = useCallback((data) => {
+    setCctvRegionsData(prev => {
+      if (JSON.stringify(prev) === JSON.stringify(data)) return prev;
+      return data;
+    });
+  }, []);
+
+  const handleTriggerIncident = useCallback((incident) => {
+    setActiveIncident(incident);
+  }, []);
+
+  const handleDispatchOfficer = useCallback((junction, officer) => {
+    if (!junction || !officer) return;
+    setDispatchedOfficers(prev => ({
+      ...prev,
+      [junction.junction_id]: {
+        ...officer,
+        target_junction_id: junction.junction_id,
+        target_junction_name: junction.name,
+        target_lat: junction.lat,
+        target_lng: junction.lng,
+        dispatched_at: new Date().toLocaleTimeString()
+      }
+    }));
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
       {/* Top Alert Bar */}
@@ -40,7 +69,6 @@ export default function App() {
             <a href="#ranked-risk-matrix" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Ranked Risk Matrix</a>
             <a href="#shift-roster" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Shift Roster & Officers</a>
             <a href="#incident-simulator" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Incident Simulator</a>
-            <a href="#manthan-yuva-report" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">Manthan Yuva Report</a>
           </nav>
         </div>
       </header>
@@ -53,7 +81,7 @@ export default function App() {
             <Map className="w-5 h-5 text-blue-600" />
             <h2 className="text-lg font-bold text-gray-900">Real-time Traffic Map</h2>
           </div>
-          <ControlMap />
+          <ControlMap cctvRegionsData={cctvRegionsData} dispatchedOfficers={dispatchedOfficers} />
         </section>
 
         {/* Section 2: Stats Cards */}
@@ -82,16 +110,16 @@ export default function App() {
             <Camera className="w-5 h-5 text-blue-600" />
             <h2 className="text-lg font-bold text-gray-900">CCTV Monitoring</h2>
           </div>
-          <CameraFeeds />
+          <CameraFeeds onCctvUpdate={handleCctvUpdate} />
         </section>
 
-        {/* Section 4: Risk Matrix */}
+        {/* Section 4: Ranked Risk Matrix */}
         <section id="ranked-risk-matrix">
           <div className="flex items-center space-x-2 mb-4">
             <ShieldAlert className="w-5 h-5 text-red-600" />
             <h2 className="text-lg font-bold text-gray-900">Ranked Risk Matrix</h2>
           </div>
-          <RiskMatrix />
+          <RiskMatrix cctvRegionsData={cctvRegionsData} activeIncident={activeIncident} dispatchedOfficers={dispatchedOfficers} onDispatchOfficer={handleDispatchOfficer} />
         </section>
 
         {/* Section 5: Shift Roster */}
@@ -109,22 +137,13 @@ export default function App() {
             <Sliders className="w-5 h-5 text-amber-600" />
             <h2 className="text-lg font-bold text-gray-900">Incident Simulator</h2>
           </div>
-          <IncidentSimulator />
-        </section>
-
-        {/* Section 7: Project Report */}
-        <section id="manthan-yuva-report">
-          <div className="flex items-center space-x-2 mb-4">
-            <BookOpen className="w-5 h-5 text-emerald-600" />
-            <h2 className="text-lg font-bold text-gray-900">Manthan Yuva Report</h2>
-          </div>
-          <ReportViewer />
+          <IncidentSimulator activeIncident={activeIncident} onTriggerIncident={handleTriggerIncident} />
         </section>
       </main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-6 px-6 text-center text-sm mt-12">
-        Nagpur City Traffic Police AI Decision Support System • Manthan Yuva Submission
+        Nagpur City Traffic Police AI Decision Support System
       </footer>
     </div>
   );
